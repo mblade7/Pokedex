@@ -1,0 +1,70 @@
+@model Pokemon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pokemon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Japanese_Name" class="control-label"></label>
+                <input asp-for="Japanese_Name" class="form-control" />
+                <span asp-validation-for="Japanese_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type1" class="control-label"></label>
+                <input asp-for="Type1" class="form-control" />
+                <span asp-validation-for="Type1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type2" class="control-label"></label>
+                <input asp-for="Type2" class="form-control" />
+                <span asp-validation-for="Type2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_HP" class="control-label"></label>
+                <input asp-for="Base_HP" class="form-control" />
+                <span asp-validation-for="Base_HP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_ATK" class="control-label"></label>
+                <input asp-for="Base_ATK" class="form-control" />
+                <span asp-validation-for="Base_ATK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_DEF" class="control-label"></label>
+                <input asp-for="Base_DEF" class="form-control" />
+                <span asp-validation-for="Base_DEF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_SPC" class="control-label"></label>
+                <input asp-for="Base_SPC" class="form-control" />
+                <span asp-validation-for="Base_SPC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_SPD" class="control-label"></label>
+                <input asp-for="Base_SPD" class="form-control" />
+                <span asp-validation-for="Base_SPD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
