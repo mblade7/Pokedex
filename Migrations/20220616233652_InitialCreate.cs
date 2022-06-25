@@ -22,7 +22,10 @@ namespace Pokedex.Migrations
                     Base_ATK = table.Column<int>(type: "INTEGER", nullable: false),
                     Base_DEF = table.Column<int>(type: "INTEGER", nullable: false),
                     Base_SPC = table.Column<int>(type: "INTEGER", nullable: false),
-                    Base_SPD = table.Column<int>(type: "INTEGER", nullable: false)
+                    Base_SPD = table.Column<int>(type: "INTEGER", nullable: false),
+                    BlueDex = table.Column<string>(type: "TEXT", nullable: false),
+                    RedDex = table.Column<string>(type: "TEXT", nullable: false),
+                    YellowDex = table.Column<string>(type: "TEXT", nullable: false),
                 },
                 constraints: table =>
                 {

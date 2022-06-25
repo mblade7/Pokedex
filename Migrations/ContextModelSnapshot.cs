@@ -51,6 +51,15 @@ namespace Pokedex.Migrations
                     b.Property<string>("Type2")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("BlueDex")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RedDex")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("YellowDex")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("DexNum");
 
                     b.ToTable("Pokemon");

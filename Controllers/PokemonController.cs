@@ -54,7 +54,7 @@ namespace Pokedex.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DexNum,Name,Japanese_Name,Type1,Type2,Base_HP,Base_ATK,Base_DEF,Base_SPC,Base_SPD")] Pokemon pokemon)
+        public async Task<IActionResult> Create([Bind("DexNum,Name,Japanese_Name,Type1,Type2,Base_HP,Base_ATK,Base_DEF,Base_SPC,Base_SPD,BlueDex,RedDex,YellowDex")] Pokemon pokemon)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Pokedex.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DexNum,Name,Japanese_Name,Type1,Type2,Base_HP,Base_ATK,Base_DEF,Base_SPC,Base_SPD")] Pokemon pokemon)
+        public async Task<IActionResult> Edit(int id, [Bind("DexNum,Name,Japanese_Name,Type1,Type2,Base_HP,Base_ATK,Base_DEF,Base_SPC,Base_SPD,BlueDex,RedDex,YellowDex")] Pokemon pokemon)
         {
             if (id != pokemon.DexNum)
             {
