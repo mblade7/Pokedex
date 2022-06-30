@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Pokedex.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220616233652_InitialCreate")]
+    [Migration("20220626141654_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,11 +38,18 @@ namespace Pokedex.Migrations
                     b.Property<int>("Base_SPD")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Catch_Rate")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Japanese_Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RedBlueDex")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -53,13 +60,8 @@ namespace Pokedex.Migrations
                     b.Property<string>("Type2")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("BlueDex")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RedDex")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("YellowDex")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("DexNum");
