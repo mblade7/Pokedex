@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 public class Context : DbContext
 {
@@ -8,6 +9,39 @@ public class Context : DbContext
         // connect to sqlite database
         options.UseSqlite(@"Data Source=Pokedex.db");
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        List<Pokemon> source = new List<Pokemon>();
+
+        using (StreamReader p = new StreamReader("Pokemon.json"))
+        {
+            string json = p.ReadToEnd();
+            source = JsonSerializer.Deserialize<List<Pokemon>>(json);
+        }
+        foreach (Pokemon p in source)
+        {
+           modelBuilder.Entity<Pokemon>().HasData(
+           new Pokemon
+           {
+               DexNum = p.DexNum,
+               Name = p.Name,
+               Japanese_Name = p.Japanese_Name,
+               Type1 = p.Type1,
+               Type2 = p.Type2,
+               Base_HP = p.Base_HP,
+               Base_ATK = p.Base_ATK,
+               Base_DEF = p.Base_DEF,
+               Base_SPC = p.Base_SPC,
+               Base_SPD = p.Base_SPD,
+               Catch_Rate = p.Catch_Rate,
+               RedBlueDex = p.RedBlueDex,
+               YellowDex =  p.YellowDex,
+           }
+       );
+            base.OnModelCreating(modelBuilder);
+        }
+    }
 
     public DbSet<Pokemon>Pokemon {get;set;}
+    public DbSet<Moves> Moves {get;set;}
 }

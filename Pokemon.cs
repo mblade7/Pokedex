@@ -13,8 +13,8 @@ public class Pokemon
     [DisplayName("Japanese Name")]
     public string Japanese_Name { get; set; }
     
-    public Type Type1 { get; set; }
-    public Type? Type2 { get; set; }
+    public string Type1 { get; set; }
+    public string? Type2 { get; set; }
     [DisplayName("Base HP")]
     public int Base_HP { get; set; }
     [DisplayName("Base Attack")]
