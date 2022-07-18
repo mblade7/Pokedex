@@ -29,9 +29,6 @@ namespace Pokedex.Migrations
                     b.Property<string>("Effect")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MaxPP")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");

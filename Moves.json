@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "Name": "Absorb",
+    "Type": "Grass",
+    "Power": 20,
+    "StartPP": 20,
+    "Accuracy": 100,
+    "Effect": "User recovers half the HP inflicted on opponent."
+  },
+  {
+    "ID": 2,
+    "Name": "Acid",
+    "Type": "Poison",
+    "Power": 40,
+    "StartPP": 30,
+    "Accuracy": 100,
+    "Effect": "Has a 33% chance to lower the target's Defense by 1 stage."
+  }
+]

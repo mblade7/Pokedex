@@ -54,7 +54,7 @@ namespace Pokedex.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Type,Power,StartPP,MaxPP,Accuracy,Effect")] Moves moves)
+        public async Task<IActionResult> Create([Bind("ID,Name,Type,Power,StartPP,Accuracy,Effect")] Moves moves)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Pokedex.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Type,Power,StartPP,MaxPP,Accuracy,Effect")] Moves moves)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Type,Power,StartPP,Accuracy,Effect")] Moves moves)
         {
             if (id != moves.ID)
             {

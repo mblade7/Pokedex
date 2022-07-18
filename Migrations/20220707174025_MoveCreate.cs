@@ -35,7 +35,6 @@ namespace Pokedex.Migrations
                     Type = table.Column<int>(type: "INTEGER", nullable: false),
                     Power = table.Column<int>(type: "INTEGER", nullable: false),
                     StartPP = table.Column<int>(type: "INTEGER", nullable: false),
-                    MaxPP = table.Column<int>(type: "INTEGER", nullable: false),
                     Accuracy = table.Column<int>(type: "INTEGER", nullable: false),
                     Effect = table.Column<string>(type: "TEXT", nullable: true)
                 },

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Pokedex.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220716132450_NewPokemon3")]
-    partial class NewPokemon3
+    [Migration("20220717122543_UpdateMoveTable")]
+    partial class UpdateMoveTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace Pokedex.Migrations
 
                     b.Property<string>("Effect")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("MaxPP")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
