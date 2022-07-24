@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Pokedex.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220717122543_UpdateMoveTable")]
-    partial class UpdateMoveTable
+    [Migration("20220718132613_NewMoves1")]
+    partial class NewMoves1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

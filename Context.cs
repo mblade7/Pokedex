@@ -12,6 +12,7 @@ public class Context : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         List<Pokemon> source = new List<Pokemon>();
+        List<Moves> source2= new List<Moves>();
 
         using (StreamReader p = new StreamReader("Pokemon.json"))
         {
@@ -38,6 +39,27 @@ public class Context : DbContext
                YellowDex =  p.YellowDex,
            }
        );
+            base.OnModelCreating(modelBuilder);
+        }
+        using (StreamReader m = new StreamReader("Moves.json"))
+        {
+            string json = m.ReadToEnd();
+            source2 = JsonSerializer.Deserialize<List<Moves>>(json);
+        }
+        foreach (Moves m in source2)
+        {
+            modelBuilder.Entity<Moves>().HasData(
+            new Moves
+            {
+                ID = m.ID,
+                Name = m.Name,
+                Type = m.Type,
+                Power = m.Power,
+                StartPP = m.StartPP,
+                Accuracy= m.Accuracy,
+                Effect= m.Effect,
+            }
+        );
             base.OnModelCreating(modelBuilder);
         }
     }
